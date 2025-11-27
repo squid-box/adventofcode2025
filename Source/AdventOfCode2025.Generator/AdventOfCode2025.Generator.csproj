@@ -1,0 +1,10 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <PublishTrimmed>true</PublishTrimmed>
+    <AssemblyName>AoC25.Gen</AssemblyName>
+    <StartupObject>AdventOfCode2025.Generator.Program</StartupObject>
+  </PropertyGroup>
+
+</Project>
