@@ -25,7 +25,7 @@ public class InputDownloader : IDisposable
         }
 
         _httpClientHandler = new HttpClientHandler();
-        _httpClientHandler.CookieContainer.Add(new Cookie("session", File.ReadAllText(SessionCookieFilename), "/", "adventofcode.com"));
+        _httpClientHandler.CookieContainer.Add(new Cookie("session", File.ReadAllText(SessionCookieFilename).Trim(), "/", ".adventofcode.com"));
     }
 
     /// <inheritdoc />

@@ -3,17 +3,17 @@
 
   <!-- Build config -->
   <PropertyGroup>
-  	<TargetFrameworks>net10.0</TargetFrameworks>
+  	<TargetFramework>net10.0</TargetFramework>
     <Platforms>AnyCPU</Platforms>
   </PropertyGroup>
 
   <!-- Paths, etc. -->
   <PropertyGroup>
-    <Stage>$(SolutionDir)\Stage</Stage>
-    <OutputPath>$(Stage)\$(Configuration)\</OutputPath>
+    <Stage>$(SolutionDir)/Stage</Stage>
+    <OutputPath>$(Stage)/$(Configuration)/</OutputPath>
     <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <BaseIntermediateOutputPath>$(Stage)\obj\$(Configuration)\$(Platform)\$(MSBuildProjectFile)</BaseIntermediateOutputPath>
+    <BaseIntermediateOutputPath>$(Stage)/obj/$(Configuration)/$(Platform)/$(MSBuildProjectFile)</BaseIntermediateOutputPath>
     <IntermediateOutputPath>$(BaseIntermediateOutputPath)</IntermediateOutputPath>
   </PropertyGroup>
 

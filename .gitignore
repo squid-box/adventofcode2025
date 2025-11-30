@@ -1,6 +1,11 @@
-Inputs/*
-.vs/*
-Stage/*
+.DS_Store
 *.user
-/Source/*/obj/*
+
+.vs/*
+.idea/*
+bin/
+obj/
+
+Inputs/*
+Stage/*
 session.cookie

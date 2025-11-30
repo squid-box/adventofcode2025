@@ -3,15 +3,10 @@
     <Platform Name="AnyCPU" />
   </Configurations>
   <Folder Name="/Solution Items/">
+    <File Path="Directory.Build.props" />
     <File Path="README.md" />
   </Folder>
-  <Project Path="Source/AdventOfCode2025.Generator/AdventOfCode2025.Generator.csproj">
-    <Platform Project="AnyCPU" />
-  </Project>
-  <Project Path="Source/AdventOfCode2025.Tests/AdventOfCode2025.Tests.csproj">
-    <Platform Project="AnyCPU" />
-  </Project>
-  <Project Path="Source/AdventOfCode2025/AdventOfCode2025.csproj">
-    <Platform Project="AnyCPU" />
-  </Project>
+  <Project Path="Source/AdventOfCode2025.Generator/AdventOfCode2025.Generator.csproj" />
+  <Project Path="Source/AdventOfCode2025.Tests/AdventOfCode2025.Tests.csproj" />
+  <Project Path="Source/AdventOfCode2025/AdventOfCode2025.csproj" />
 </Solution>
