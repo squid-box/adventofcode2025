@@ -10,7 +10,7 @@ The .exe will download the input of the requested day if it's missing.
 |:------------------------------------------:|:---------------:|:-------------:|
 |  [1](https://adventofcode.com/2025/day/1)  | Secret Entrance | :star: :star: |
 |  [2](https://adventofcode.com/2025/day/2)  | Gift Shop       | :star: :star: |
-|  [3](https://adventofcode.com/2025/day/3)  |                 |               |
+|  [3](https://adventofcode.com/2025/day/3)  | Lobby           | :star: :star: |
 |  [4](https://adventofcode.com/2025/day/4)  |                 |               |
 |  [5](https://adventofcode.com/2025/day/5)  |                 |               |
 |  [6](https://adventofcode.com/2025/day/6)  |                 |               |
