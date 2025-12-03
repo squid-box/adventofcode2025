@@ -1,6 +1,7 @@
 ﻿namespace AdventOfCode2025.Tests.Utils.Extensions;
 
 using System;
+using System.Collections.Generic;
 using AdventOfCode2025.Utils.Extensions;
 using NUnit.Framework;
 
@@ -47,5 +48,26 @@ public class StringExtensionsTests
     public void TestCountInstanceOf(string text, string sequence, int count)
     {
         Assert.That(text.CountInstancesOf(sequence), Is.EqualTo(count));
+    }
+
+    [TestCase("123", new[] { 1, 2, 3 })]
+    [TestCase("1", new[] { 1 })]
+    public void TestSplitToDigits(string text, IEnumerable<int> expectedResult)
+    {
+        Assert.That(text.SplitToDigits(), Is.EqualTo(expectedResult));
+    }
+
+    [TestCase("bad")]
+    [TestCase("1t2")]
+    public void SplitToDigits_BadInput_Throws(string text)
+    {
+        Assert.Throws<ArgumentException>(() => text.SplitToDigits());
+    }
+
+    [TestCase("12 ")]
+    [TestCase(" 12")]
+    public void SplitToDigits_UntrimmedInput_DoesNotThrow(string text)
+    {
+        Assert.DoesNotThrow(() => text.SplitToDigits());
     }
 }

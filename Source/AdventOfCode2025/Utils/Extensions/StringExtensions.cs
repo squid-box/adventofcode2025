@@ -80,4 +80,28 @@ public static class StringExtensions
 
         return foundIndices.Count;
     }
+
+    /// <summary>
+    /// Splits a string into digits and converts them to integers.
+    /// </summary>
+    /// <remarks>Requires a string with only digits.</remarks>
+    /// <param name="source">The string to convert.</param>
+    /// <returns>A list of the digits in the given string.</returns>
+    /// <exception cref="ArgumentOutOfRangeException" />
+    public static IEnumerable<int> SplitToDigits(this string source)
+    {
+        var result = new List<int>();
+
+        foreach (var character in source.Trim())
+        {
+            if (!char.IsDigit(character))
+            {
+                throw new ArgumentException($"\"{source}\" contains non-digits.", nameof(source));
+            }
+
+            result.Add(character.ToInt());
+        }
+
+        return result;
+    }
 }

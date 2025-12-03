@@ -14,6 +14,6 @@ public static class CharExtensions
     /// <returns>The char as an integer.</returns>
     public static int ToInt(this char source)
     {
-        return Convert.ToInt32(source);
+        return (int)char.GetNumericValue(source);
     }
 }

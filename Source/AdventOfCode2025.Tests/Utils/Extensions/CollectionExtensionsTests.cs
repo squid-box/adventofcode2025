@@ -56,4 +56,11 @@ public class CollectionExtensionsTests
 
         Assert.That(inputTwo.SplitByBlankLines().Count.Equals(3));
     }
+
+    [TestCase(new[] {1,2,3}, "123")]
+    [TestCase(new[] {'h', 'e', 'l', 'l', 'o'}, "hello")]
+    public void TestCombineToString<T>(ICollection<T> input, string expectedOutput)
+    {
+        Assert.That(input.CombineToString(), Is.EqualTo(expectedOutput));
+    }
 }

@@ -69,4 +69,16 @@ public static class CollectionExtensions
 
         return result;
     }
+
+    /// <summary>
+    /// Combines a collection into a string.
+    /// </summary>
+    /// <typeparam name="T">The type of object in the collection.</typeparam>
+    /// <param name="input">The collection to combine.</param>
+    /// <param name="separator">Optional separator between each collection item, default is no separator.</param>
+    /// <returns>The items from the collection combined into a string.</returns>
+    public static string CombineToString<T>(this ICollection<T> input, string separator = "")
+    {
+        return string.Join(separator, input);
+    }
 }
