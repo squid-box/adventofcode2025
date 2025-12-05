@@ -11,9 +11,20 @@ public static class LongExtensions
     /// <param name="val">Value to check.</param>
     /// <param name="lowerBound">Lower bound (inclusive).</param>
     /// <param name="upperBound">Upper bound (inclusive).</param>
-    /// <returns>True if the integer is within the given range, otherwise false.</returns>
+    /// <returns>True if the long is within the given range, otherwise false.</returns>
     public static bool IsWithin(this long val, long lowerBound, long upperBound)
     {
         return lowerBound <= val && val <= upperBound;
+    }
+
+    /// <summary>
+    /// Determines if the long is within a given (inclusive) range.
+    /// </summary>
+    /// <param name="val">Value to check.</param>
+    /// <param name="range">The range.</param>
+    /// <returns>True if the long is within the given range, otherwise false.</returns>
+    public static bool IsWithin(this long val, Range<long> range)
+    {
+        return val.IsWithin(range.Lower, range.Upper);
     }
 }

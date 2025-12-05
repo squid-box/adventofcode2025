@@ -16,4 +16,15 @@ public static class IntExtensions
     {
         return lowerBound <= val && val <= upperBound;
     }
+
+    /// <summary>
+    /// Determines if the integer is within a given (inclusive) range.
+    /// </summary>
+    /// <param name="val">Value to check.</param>
+    /// <param name="range">The range.</param>
+    /// <returns>True if the integer is within the given range, otherwise false.</returns>
+    public static bool IsWithin(this int val, Range<int> range)
+    {
+        return val.IsWithin(range.Lower, range.Upper);
+    }
 }
