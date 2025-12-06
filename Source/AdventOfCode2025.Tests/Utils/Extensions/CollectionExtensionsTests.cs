@@ -2,6 +2,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using AdventOfCode2025.Utils.Extensions;
 using NUnit.Framework;
 
@@ -62,5 +63,13 @@ public class CollectionExtensionsTests
     public void TestCombineToString<T>(ICollection<T> input, string expectedOutput)
     {
         Assert.That(input.CombineToString(), Is.EqualTo(expectedOutput));
+    }
+
+    [TestCase(new[] {2 , 3, 4}, 24)]
+    [TestCase(new[] {2 , 0, 4}, 0)]
+    [TestCase(new[] {-2 , 3, 4}, -24)]
+    public void TestProduct<T>(ICollection<T> input, T expectedOutput) where T : INumber<T>
+    {
+        Assert.That(input.Product(), Is.EqualTo(expectedOutput));
     }
 }
