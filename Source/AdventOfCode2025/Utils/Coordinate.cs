@@ -2,11 +2,12 @@
 
 using System;
 using System.Collections.Generic;
+using AdventOfCode2025.Utils.Extensions;
 
 /// <summary>
 /// Represents a coordinate in a 2-4 dimensional system.
 /// </summary>
-public class Coordinate : IComparable
+public class Coordinate : IComparable, IEquatable<Coordinate>
 {
     public Coordinate(int x, int y, int z = 0, int w = 0)
     {
@@ -14,6 +15,27 @@ public class Coordinate : IComparable
         Y = y;
         Z = z;
         W = w;
+    }
+
+    public Coordinate(params int[] args)
+    {
+        if (!args.Length.IsWithin(2,4))
+        {
+            throw new ArgumentException("Coordinate supports 2-4 dimensional points.", nameof(args));
+        }
+
+        X = args[0];
+        Y = args[1];
+
+        if (args.Length > 2)
+        {
+            Z = args[2];
+        }
+
+        if (args.Length > 3)
+        {
+            W = args[3];
+        }
     }
 
     public int X { get; }
@@ -61,6 +83,11 @@ public class Coordinate : IComparable
     public override string ToString()
     {
         return $"({X},{Y},{Z},{W})";
+    }
+
+    public bool Equals(Coordinate other)
+    {
+        return Equals((object)other);
     }
 
     public override bool Equals(object obj)
