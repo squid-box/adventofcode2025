@@ -17,9 +17,9 @@ public class Coordinate : IComparable, IEquatable<Coordinate>
         W = w;
     }
 
-    public Coordinate(params int[] args)
+    public Coordinate(IList<int> args)
     {
-        if (!args.Length.IsWithin(2,4))
+        if (!args.Count.IsWithin(2,4))
         {
             throw new ArgumentException("Coordinate supports 2-4 dimensional points.", nameof(args));
         }
@@ -27,12 +27,12 @@ public class Coordinate : IComparable, IEquatable<Coordinate>
         X = args[0];
         Y = args[1];
 
-        if (args.Length > 2)
+        if (args.Count > 2)
         {
             Z = args[2];
         }
 
-        if (args.Length > 3)
+        if (args.Count > 3)
         {
             W = args[3];
         }
@@ -126,6 +126,16 @@ public class Coordinate : IComparable, IEquatable<Coordinate>
         }
 
         return Math.Abs(destination.X - origin.X) + Math.Abs(destination.Y - origin.Y);
+    }
+    
+    public static Coordinate MinimumOf(Coordinate a, Coordinate b)
+    {
+        return new Coordinate(Math.Min(a.X, b.X), Math.Min(a.Y, b.Y), Math.Min(a.Z, b.Z), Math.Min(a.W, b.W));
+    }
+    
+    public static Coordinate MaximumOf(Coordinate a, Coordinate b)
+    {
+        return new Coordinate(Math.Max(a.X, b.X), Math.Max(a.Y, b.Y), Math.Max(a.Z, b.Z), Math.Max(a.W, b.W));
     }
 
     public static Coordinate Zero => new(0, 0);

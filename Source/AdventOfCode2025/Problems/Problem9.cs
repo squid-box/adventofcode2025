@@ -1,6 +1,5 @@
 namespace AdventOfCode2025.Problems;
 
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using AdventOfCode2025.Utils;
@@ -25,37 +24,31 @@ public class Problem9(InputDownloader inputDownloader) : ProblemBase(9, inputDow
 
     public static object PartOne(IEnumerable<string> input)
     {
-        var redTiles = input
-            .Select(line => new Coordinate(line.Split(',').AsInt().ToArray())).ToList();
-
-        var largestArea = 0L;
-
-        for (var i = 0; i < redTiles.Count - 1; i++)
-        {
-            for (var j = 1; j < redTiles.Count; j++)
-            {
-                if (i == j)
-                {
-                    continue;
-                }
-
-                var width = Math.Abs(redTiles[j].X - redTiles[i].X) + 1L;
-                var height = Math.Abs(redTiles[j].Y - redTiles[i].Y) + 1L;
-
-                var area = width * height;
-
-                if (area > largestArea)
-                {
-                    largestArea = area;
-                }
-            }
-        }
-
-        return largestArea;
+        return input
+            .Select(line => new Coordinate(line.Split(',').AsInt()))
+            .EnumeratePairs()
+            .Select(pair => new Rectangle(pair.First, pair.Second))
+            .Max(rectangle => rectangle.Area);
     }
 
     public static object PartTwo(IEnumerable<string> input)
     {
-        return "Unsolved";
+        // Parse the points in the input.
+        var points = input
+            .Select(line => new Coordinate(line.Split(',').AsInt()))
+            .ToList();
+        
+        // Determine the edges between the points.
+        var edges = points
+            .Append(points[0])
+            .Chain()
+            .Select(p => new Line(p.First, p.Second))
+            .ToList();
+
+        // Find the biggest area of the rectangles which do not intersect the edges.
+        return points.EnumeratePairs()
+            .Select(p => new Rectangle(p.First, p.Second))
+            .Where(rect => !edges.Any(rect.Intersects))
+            .Max(rectangle => rectangle.Area);
     }
 }
