@@ -17,6 +17,6 @@ The .exe will download the input of the requested day if it's missing.
 |  [7](https://adventofcode.com/2025/day/7)  | Laboratories        | :star: :star: |
 |  [8](https://adventofcode.com/2025/day/8)  | Playground          | :star: :star: |
 |  [9](https://adventofcode.com/2025/day/9)  | Movie Theater       | :star: :star: |
-| [10](https://adventofcode.com/2025/day/10) |                     |               |
-| [11](https://adventofcode.com/2025/day/11) |                     |               |
+| [10](https://adventofcode.com/2025/day/10) | Factory             | :star:        |
+| [11](https://adventofcode.com/2025/day/11) | Reactor             | :star: :star: |
 | [12](https://adventofcode.com/2025/day/12) |                     |               |
